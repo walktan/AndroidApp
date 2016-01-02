@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+<string name="app_name">中京BUS案内</string>
+    <string name="menu_settings">Settings</string>
+    <string name="desc">中京大学BUS案内</string>
+    <string name="descbar">----------</string>
+    
+</resources>

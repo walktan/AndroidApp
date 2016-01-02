@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f1f1f1"
+    android:gravity="center_horizontal">
+    
+    //タイトル画像
+    <ImageView
+        android:id="@+id/ImageView"
+        android:src="@drawable/title"
+        android:contentDescription="@string/desc"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"/>
+
+    //出発地点選択ラジオボタン
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ImageView"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_margin="0dp">
+        
+        <RadioButton
+            style="@style/DRadioButton"
+            android:id="@+id/radiobutton0"
+            android:layout_margin="0dp"
+            android:checked="true"/>
+                
+        <RadioButton
+            style="@style/JRadioButton"
+            android:id="@+id/radiobutton1"
+            android:layout_margin="0dp"
+            android:checked="false"/>
+        </RadioGroup>
+    //時間
+    <TextView
+        style="@style/time"
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/radiogroup"
+        android:layout_alignParentLeft="true"/>
+    
+    <TextView
+        style="@style/time"
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/radiogroup"
+        android:layout_toRightOf="@+id/date"/>
+    
+    <TextView
+        style="@style/time"
+        android:id="@+id/dia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/radiogroup"
+        android:layout_toRightOf="@+id/time"/>
+    
+    <TextView
+        style="@style/forward"
+        android:id="@+id/forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/time"/>
+    
+    //タイムライン
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/forward">
+        
+          <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#f1f1f1"
+                android:orientation="vertical">
+                
+              <RelativeLayout
+                  android:id="@+id/Group1"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:background="#f1f1f1"
+                  android:gravity="center_vertical">
+                
+                <TextView
+                    style="@style/num"
+                    android:id="@+id/one"
+                    android:layout_alignParentLeft="true"
+                    />
+                <TextView
+                    style="@style/now"
+                    android:id="@+id/Result0"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/one"
+                    android:layout_toLeftOf="@+id/yet1"
+                    />
+                <TextView
+                    style="@style/yet"
+                    android:id="@+id/yet1"
+                    android:layout_alignParentRight="true"
+                    />
+                </RelativeLayout>
+                
+              <ImageView
+                   android:id="@+id/bar1"
+                   android:src="@drawable/bar"
+                   android:contentDescription="@string/descbar"
+                   android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:adjustViewBounds="true"
+                   android:layout_marginLeft="12dp"
+                   android:layout_marginRight="12dp"
+                   android:layout_below="@+id/Group1"/>
+                
+              <RelativeLayout
+                  android:id="@+id/Group2"
+                  android:background="#f1f1f1"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_vertical"
+                  android:layout_below="@+id/bar1">
+                
+                <TextView
+                    style="@style/num"
+                    android:id="@+id/two"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    style="@style/now"
+                    android:id="@+id/Result1"
+                    android:layout_toRightOf="@+id/two"
+                    android:layout_toLeftOf="@+id/yet2"/>
+                <TextView
+                    style="@style/yet"
+                    android:id="@+id/yet2"
+                    android:layout_alignParentRight="true"/>
+                
+                </RelativeLayout>
+                
+                <ImageView
+                   android:id="@+id/bar2"
+                   android:src="@drawable/bar"
+                   android:contentDescription="@string/descbar"
+                   android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:adjustViewBounds="true"
+                   android:layout_marginLeft="12dp"
+                   android:layout_marginRight="12dp"
+                   android:layout_below="@+id/Group2"/>
+                
+                <RelativeLayout
+                    android:id="@+id/Group3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f1f1f1"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/bar2">
+                
+                  <TextView
+                      style="@style/num"
+                      android:id="@+id/three"
+                      android:layout_alignParentLeft="true"/>
+                  <TextView
+                      style="@style/now"
+                      android:id="@+id/Result2"
+                      android:layout_toRightOf="@+id/three"
+                      android:layout_toLeftOf="@+id/yet3"/>
+                  <TextView
+                      style="@style/yet"
+                      android:id="@+id/yet3"
+                      android:layout_alignParentRight="true"/>
+                
+                </RelativeLayout>
+                
+                <ImageView
+                   android:id="@+id/bar3"
+                   android:src="@drawable/bar"
+                   android:contentDescription="@string/descbar"
+                   android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:adjustViewBounds="true"
+                   android:layout_marginLeft="12dp"
+                   android:layout_marginRight="12dp"
+                   android:layout_below="@+id/Group3"/>
+                
+                <RelativeLayout
+                    android:id="@+id/Group4"
+                    android:background="#f1f1f1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/bar3">
+                
+                  <TextView
+                      style="@style/num"
+                      android:id="@+id/four"
+                      android:layout_alignParentLeft="true"/>
+                  <TextView
+                      style="@style/now"
+                      android:id="@+id/Result3"
+                      android:layout_toRightOf="@+id/four"
+                      android:layout_toLeftOf="@+id/yet4"/>
+                  <TextView
+                      style="@style/yet"
+                      android:id="@+id/yet4"
+                      android:layout_alignParentRight="true"/>
+                  
+                  </RelativeLayout>
+                 
+<!--                 <ImageView
+                   android:id="@+id/bar4"
+                   android:src="@drawable/bar"
+                   android:contentDescription="@string/descbar"
+                   android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:adjustViewBounds="true"
+                   android:layout_marginLeft="12dp"
+                   android:layout_marginRight="12dp"
+                   android:layout_below="@+id/Group4"/> -->
+                
+                <net.nend.android.NendAdView
+                    android:id="@+id/nend"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    NendApiKey="8ce6071b8e4dfba3fdd10fc9e3fa418adde80346"
+                    NendSpotId="37415"
+                    android:layout_below="@+id/Group4"
+                    android:gravity="center"/>
+                
+<!--                 <ImageView
+                   android:id="@+id/barx"
+                   android:src="@drawable/bar"
+                   android:contentDescription="@string/descbar"
+                   android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:adjustViewBounds="true"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginRight="20dp"
+                   android:layout_below="@+id/nend"/> -->
+                
+                <RelativeLayout
+                    android:id="@+id/Group5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f1f1f1"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/nend">
+                
+                <TextView
+                    style="@style/num"
+                    android:id="@+id/five"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    style="@style/now"
+                    android:id="@+id/Result4"
+                    android:layout_toRightOf="@+id/five"
+                    android:layout_toLeftOf="@+id/yet5"/>
+                <TextView
+                    style="@style/yet"
+                    android:id="@+id/yet5"
+                    android:layout_alignParentRight="true"/>
+                
+                </RelativeLayout>
+                
+                <ImageView
+                   android:id="@+id/bar5"
+                   android:src="@drawable/bar"
+                   android:contentDescription="@string/descbar"
+                   android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:adjustViewBounds="true"
+                   android:layout_marginLeft="12dp"
+                   android:layout_marginRight="12dp"
+                   android:layout_below="@+id/Group5"/>
+                
+                <RelativeLayout
+                    android:id="@+id/Group6"
+                    android:background="#f1f1f1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/bar5">
+                
+                <TextView
+                    style="@style/num"
+                    android:id="@+id/six"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    style="@style/now"
+                    android:id="@+id/Result5"
+                    android:layout_toRightOf="@+id/six"
+                    android:layout_toLeftOf="@+id/yet6"/>
+                <TextView
+                    style="@style/yet"
+                    android:id="@+id/yet6"
+                    android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                
+                <ImageView
+                   android:id="@+id/bar7"
+                   android:src="@drawable/bar"
+                   android:contentDescription="@string/descbar"
+                   android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:adjustViewBounds="true"
+                   android:layout_marginLeft="12dp"
+                   android:layout_marginRight="12dp"
+                   android:layout_below="@+id/Group6"/>
+                
+                
+                </RelativeLayout>
+                
+                </ScrollView>
+
+</RelativeLayout>

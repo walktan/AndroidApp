@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- 選択状態の選択肢が押されたとき -->
+	<item
+		android:state_checked="true"
+		android:state_pressed="true"
+		android:drawable="@drawable/dooradio"/>
+	<!-- 選択されているとき -->
+	<item
+		android:state_checked="true"
+		android:drawable="@drawable/doradio"/>
+	<!-- 選択されていない選択肢が押されたとき -->
+	<item
+		android:state_checked="false"
+		android:state_pressed="true"
+		android:drawable="@drawable/dforadio"/>
+	<!-- 選択されていない選択肢にフォーカスがあたったとき -->
+		 
+	<!-- 選択されていない選択肢のデフォルト状態 -->
+	<item
+		android:state_checked="false"
+		android:drawable="@drawable/dfradio"/>
+</selector>
